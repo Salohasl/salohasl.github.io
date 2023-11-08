@@ -1,0 +1,55 @@
+    /*ГОТОВО ГЛАВНАЯ СТРАНИЦА
+      ГОТОВО СТРАНИЦА ПРАЙС
+    */
+    
+    
+    @media only screen and (max-width:1200px){ 
+      
+    }
+  
+  @media only screen and (max-width:992px){
+  .menuBtn{
+    display: flex;
+    border: none;
+  } 
+   .media-flex.popUp{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom: 1px solid rgb(71, 2, 108);
+    background: -webkit-linear-gradient(225deg, rgb(71, 2, 108), rgb(0, 0, 0));
+    background: -moz-linear-gradient(225deg, rgb(71, 2, 108), rgb(0, 0, 0));
+    background: linear-gradient(225deg, rgb(71, 2, 108), rgb(0, 0, 0));;
+    position: absolute;
+    margin-top: 100px;
+    height: 300px;
+    width: 100%;
+    animation-duration: 0.55s;  /* Время работы анимации */
+    animation-fill-mode: both;  /* Поведение анимации */
+    animation-name: fadeInDown;/* Имя анимации */
+  } 
+  @keyframes fadeInDown { /* Сама анимация */
+    0% {                /* Старт анимации */
+        opacity: 0;
+        transform: translate3d(0%, -100px, 0px);
+    }
+    100% {              /* в финале анимации - финал это заданная 0.55s */
+        opacity: 1;
+        transform: none;
+    }
+  }
+  
+  }
+  @media only screen and (max-width:768px){ /*-------ГОТОВО-------*/
+    
+  }
+  @media only screen and (max-width:570px){
+    
+  }
+  @media only screen and (max-width:320px){
+    
+  }
+  
