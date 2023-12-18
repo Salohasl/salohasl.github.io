@@ -35,30 +35,76 @@ body {
     opacity: 1;
   }
 }
-header {
-  z-index: 2;
+.menuBtn.active span:nth-of-type(1) {
+  display: none;
+}
+
+.menuBtn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menuBtn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+.menuBtn {
+  margin-left: 85%;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
   position: fixed;
-  background-color: #171717;
+  z-index: 3;
+  overflow: hidden;
+  display: none;
+}
+
+.menuBtn span {
+  width: 30px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  background-color: #27AE60;
+  transition: all 0.5s;
+}
+
+.menuBtn span:nth-of-type(2) {
+  top: calc(50% - 5px);
+}
+
+.menuBtn span:nth-of-type(3) {
+  top: calc(50% + 5px);
+}
+
+header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+  position: fixed;
   width: 100%;
+  z-index: 4;
 }
 header h1 {
   color: white;
-  margin: 30px;
+  margin: 16px;
 }
 header ul {
   list-style-type: none;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-left: 600px;
+  justify-content: space-between;
+  margin-left: 500px;
 }
 header ul a {
   text-decoration: none;
   color: white;
-  margin-left: 100px;
+  margin-left: 50px;
+  font-size: 18px;
+  font-weight: 600;
 }
 header ul a:hover {
   color: #27AE60;
@@ -68,11 +114,15 @@ header ul a.active {
 }
 
 .aboutMe {
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
   padding: 80px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .aboutMe .aboutMe-text {
@@ -97,7 +147,6 @@ header ul a.active {
 }
 .aboutMe .aboutMe-text .aboutMe-text_button a button {
   margin-top: 5px;
-  width: 100px;
   color: #27AE60;
   font-weight: 600;
 }
@@ -112,24 +161,44 @@ header ul a.active {
 .aboutContact h1 {
   color: #fff;
   text-align: center;
+  margin-top: 100px;
 }
 .aboutContact .aboutContact-text {
-  margin: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.aboutContact .aboutContact-text .swiper {
+  width: 45%;
+}
+.aboutContact .aboutContact-text .swiper .swiper-button-next {
+  color: #27AE60;
+}
+.aboutContact .aboutContact-text .swiper .swiper-button-prev {
+  color: #27AE60;
+}
+.aboutContact .aboutContact-text .swiper-slide {
+  background-color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 .aboutContact .aboutContact-text .blockOne {
-  border: 1px solid #27AE60;
+  border: 1px solid #202020;
   border-radius: 10px;
-  margin: 10px;
+  margin: 15px;
+  background-color: #202020;
+  box-shadow: 1px 1px 5px 5px #27AE60;
 }
 .aboutContact .aboutContact-text .blockOne h3 {
-  color: white;
+  color: #27AE60;
   margin: 10px;
   text-align: center;
-  margin: 20px;
 }
 .aboutContact .aboutContact-text .blockOne p {
   color: white;
@@ -143,9 +212,11 @@ header ul a.active {
   color: white;
 }
 .aboutContact .aboutContact-text .blockTwo {
-  border: 1px solid #27AE60;
+  border: 1px solid #202020;
+  box-shadow: 1px 1px 5px 5px #27AE60;
   border-radius: 10px;
-  margin: 50px;
+  margin: 15px;
+  background-color: #202020;
 }
 .aboutContact .aboutContact-text .blockTwo p {
   color: white;
@@ -195,7 +266,7 @@ header ul a.active {
   font-size: 30px;
 }
 .myСapabilities .myСapabilities-basis {
-  margin: 50px;
+  margin: 10px;
   background-color: hsl(0deg, 0%, 13%);
   border-radius: 20px;
   cursor: pointer;
@@ -220,6 +291,7 @@ header ul a.active {
 .myСapabilities .myСapabilities-other {
   background-color: #202020;
   border-radius: 20px;
+  margin: 10px;
   cursor: pointer;
 }
 .myСapabilities .myСapabilities-other.active {

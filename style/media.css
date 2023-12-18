@@ -1,55 +1,161 @@
-    /*ГОТОВО ГЛАВНАЯ СТРАНИЦА
-      ГОТОВО СТРАНИЦА ПРАЙС
-    */
-    
+
     
     @media only screen and (max-width:1200px){ 
       
     }
   
   @media only screen and (max-width:992px){
-  .menuBtn{
-    display: flex;
-    border: none;
-  } 
-   .media-flex.popUp{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom: 1px solid rgb(71, 2, 108);
-    background: -webkit-linear-gradient(225deg, rgb(71, 2, 108), rgb(0, 0, 0));
-    background: -moz-linear-gradient(225deg, rgb(71, 2, 108), rgb(0, 0, 0));
-    background: linear-gradient(225deg, rgb(71, 2, 108), rgb(0, 0, 0));;
-    position: absolute;
-    margin-top: 100px;
-    height: 300px;
-    width: 100%;
-    animation-duration: 0.55s;  /* Время работы анимации */
-    animation-fill-mode: both;  /* Поведение анимации */
-    animation-name: fadeInDown;/* Имя анимации */
-  } 
-  @keyframes fadeInDown { /* Сама анимация */
-    0% {                /* Старт анимации */
-        opacity: 0;
-        transform: translate3d(0%, -100px, 0px);
+    nav{
+      display: none;
     }
-    100% {              /* в финале анимации - финал это заданная 0.55s */
-        opacity: 1;
-        transform: none;
+    .menuBtn{
+      display: flex;
     }
-  }
+    
+     nav.popUp{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      margin-top: 50px;
+      height: 150px;
+      width: 100%;
+      animation-duration: 0.55s;  /* Время работы анимации */
+      animation-fill-mode: both;  /* Поведение анимации */
+      animation-name: fadeInDown;/* Имя анимации */
+    } 
+    header ul{
+      margin-top: 60px;
+      margin-left: -10%;
+    }
+    
+    @keyframes fadeInDown { /* Сама анимация */
+      0% {                /* Старт анимации */
+          opacity: 0;
+          transform: translate3d(100%, 0px, 0px);
+      }
+      100% {              /* в финале анимации - финал это заданная 0.55s */
+          opacity: 1;
+          transform: none;
+      }
+    }
+    .aboutContact .aboutContact-text .swiper {
+      width: 100%;
+    }
   
   }
   @media only screen and (max-width:768px){ /*-------ГОТОВО-------*/
-    
+    .menuBtn{
+      margin-right: 50px;
+    }
+    .phone{
+      margin-top: 50px;
+    }
+    .form-submit{
+      text-align: center;
+    }
   }
   @media only screen and (max-width:570px){
+    header{
+      background-color: black;
+    }
+    .aboutMe .aboutMe-img img{
+      width: 350px;
+      height: 350px;
+    }
+    .aboutMe-text{
+      text-align: center;
+    }
+    .aboutMe-text button{
+      margin: 10px;
+    }
+    .btn-up{
+      margin-right: -50px;
+    }
+    .telegram{
+      margin: 20px;
+      margin-top: 50px;
+    }
+    .myСapabilities-other{
+      width: 95%;
+    }
+    .myСapabilities h2{
+      margin-bottom: 50px;
+    }
+    header ul{
+      margin-top: 60px;
+      margin-left: -20%;
+    }
+    .question-text{
+      margin-bottom: 120px;
+      margin-right: 100px;
+    }
+    .phone{
+      margin: 20px;
+      margin-top: 50px;
+      font-size: 15px;
+    }
+    .mail{
+      margin: 20px;
+      margin-top: 50px;
+      font-size: 12px;
+    }
+    .fullName{
+      margin: 20px;
+      margin-top: 50px;
+      font-size: 12px;
+    }
+    .aboutContact .aboutContact-text .swiper .swiper-button-next{
+      margin-right: 1%;
+    }
+    .aboutContact .aboutContact-text .swiper .swiper-button-prev {
+      display: none;
+    }
+    .carousel-item{
+  --width: clamp(150px, 80vw, 300px);
+  --height: clamp(200px, 100vw, 400px);
+    }
+  }
+  @media only screen and (max-width:400px){
+    .aboutMe .aboutMe-img img{
+      width: 300px;
+      height: 300px;
+    }
     
+    .mail{
+      margin: 20px;
+      margin-top: 50px;
+      font-size: 12px;
+    }
+    textarea{
+      width: 100%;
+    }
+    .footer-first h2{
+      font-size: 25px;
+    }
+    .btn-up{
+      width: 35px;
+      height: 35px;
+    }
+    .fullName{
+      margin: 20px;
+      margin-top: 50px;
+      font-size: 12px;
+    }
   }
   @media only screen and (max-width:320px){
+    header ul{
+      margin-top: 60px;
+      margin-left: -30%;
+    }
     
+    .aboutMe .aboutMe-img img{
+      width: 250px;
+      height: 250px;
+    }
   }
   

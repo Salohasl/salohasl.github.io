@@ -1,9 +1,4 @@
-/*!
- * Форма обратной связи (https://github.com/itchief/feedback-form)
- * Описание: https://itchief.ru/php/feedback-form
- * Copyright 2016-2022 Alexander Maltsev
- * Licensed under MIT (https://github.com/itchief/feedback-form/blob/master/LICENSE)
- */
+
 
 class ItcSubmitForm {
 
@@ -52,14 +47,7 @@ class ItcSubmitForm {
     </div>`;
   }
 
-  // получение новой капчи
-  _reloadСaptcha() {
-    var captchaImg = this._elForm.querySelector('.form-captcha__image');
-    var captchaSrc = captchaImg.getAttribute('data-src');
-    var captchaPrefix = captchaSrc.indexOf('?id') !== -1 ? '&rnd=' : '?rnd=';
-    var captchaNewSrc = captchaSrc + captchaPrefix + new Date().getTime();
-    captchaImg.setAttribute('src', captchaNewSrc);
-  }
+ 
 
   // установка статуса валидации
   _setStateValidaion(input, state, message) {
@@ -331,3 +319,18 @@ class ItcSubmitForm {
     }
   }
 }
+
+ItcSubmitForm.getOrCreateInstance('form');
+
+    document.addEventListener('itc.successSendForm', (e) => {
+      const el = e.target.closest('.form-container').querySelector('.form-success');
+      el.classList.remove('form-success_hide');
+    });
+
+    // при клике на .form-success__btn
+    document.querySelector('.form-success__btn').addEventListener('click', (e) => {
+      const el = e.target.closest('.form-container').querySelector('form');
+      const form = ItcSubmitForm.getOrCreateInstance(el);
+      form.reset();
+      e.target.closest('.form-container').querySelector('.form-success').classList.add('form-success_hide');
+    });

@@ -9,14 +9,15 @@
 <title>WebDev Maxim</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="robots" content="index, follow" />
-<meta name="keywords" content="конфигуратор ПК, Купить ПК, купить пк онлайн, собрать пк, собрать пк Калининград, ремонт компьютеров, ремонт ПК, сборка компьютеров" />
-<meta name="description" content="Подберем по вашему бюджету ПК. Только у нас самые лучшие цены и за каждую свою работу даем гарантию!!" />
-<link rel="shortcut icon" href="">
+<meta name="keywords" content="Верстальщик, веб разработчик, программист, верстка сайтов, заказать сайт, Разработчик Калининград, Веб разработчик Калининград, Верстальщик Калининград, создать сайт Калининград, Сайт с 0, верстка сайта, создание сайта, программист по созданию сайта" />
+<meta name="description" content="Разработка лучших сайтов по готовому дизайну или с 0!" />
+<link rel="shortcut icon" href="/icon/icon.png">
 <link rel="stylesheet" href="/style/normalize.css">
 <link rel="stylesheet" href="/style/media.css">
 <link rel="stylesheet" href="/style/style.css">
 <link rel="stylesheet" href="/style/price.css">
-<link rel="stylesheet" href="/styleForm/form.css">
+<link rel="stylesheet" href="/feedback/styleForm/form.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nanum+Myeongjo&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Quicksand&display=swap" rel="stylesheet">
@@ -42,15 +43,15 @@
   <div class="btn-up btn-up_hide"></div>
   <main>
 
-    <div class="aboutMe">
+    <div class="aboutMe" style="background-image: url(/img/fon.png);">
       <div class="aboutMe-text">
         <h1>Привет, меня зовут
           <br>Максим
         </h1>
         <p>I'm a Frontend Developer</p>
         <div class="aboutMe-text_button">
-          <button class="glow-on-hover"><a href="/pdf/Завидий Максим.pdf" target="_blank">Посмотреть резюме</a></button>
-          <a href="#footer"><button class="glow-on-hover">Контакты</button></a>
+          <button class="glow-on-hover"><a href="/pdf/Завидий Максим.pdf" target="_blank" download>Посмотреть резюме</a></button>
+          <a href="#contact"><button class="glow-on-hover">Напишите мне</button></a>
         </div>
       </div>
       <div class="aboutMe-img">
@@ -60,41 +61,50 @@
     <div class="aboutContact">
       <h1>Обо мне</h1>
       <div class="aboutContact-text">
-
-        <div class="blockOne">
-          <h3>Доброго времени суток, я Веб-разработчик.</h3>
-          <p>◼️Занимаюсь разработкой сайтов.</p>
-          <ol>
-            <li>Создание сайта под ключ</li>
-            <li>Поддержка уже существующего сайта</li>
-          </ol>
-          <p>◼️Делаю сайты, такие как:</p>
-          <ol>
-            <li>Одностраничный сайт</li>
-            <li>Сайт-визитка</li>
-            <li>Сайт для организации (корпоративный сайт)</li>
-            <li>Разработка сайта по индивидуальному дизайну (любой сложности)</li>
-          </ol>
-        </div>
-
-        <div class="blockTwo">
-          <p>◼️Перед началом работы:</p>
-          <ol>
-            <li>Общение с вами, обсуждаем будущий сайт, как он будет выглядеть, какие функции выполнять, какие у вас желания.</li>
-            <li>Анализ вашей сферы деятельности.</li>
-          </ol>
-          <p>◼️Далее:</p>
-          <ol>
-            <li>Создание сайты с нуля или по готовому шаблону. <br>Сайт можно модернизировать под ваши потребности как на этапе разработки, так и после запуска. </li>
-            <li>Верстка дизайна</li>
-            <li>Подключение функционала(если он есть)</li>
-            <li>Привязка админки к WordPress</li>
-            <li>Регистрация домена</li>
-          </ol>
+              <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="blockOne">
+                  <h3>Доброго времени суток, я Веб-разработчик.</h3>
+                  <p>Занимаюсь разработкой сайтов.</p>
+                  <ol>
+                    <li>Создание сайта под ключ</li>
+                    <li>Поддержка уже существующего сайта</li>
+                  </ol>
+                  <p>Делаю сайты, такие как:</p>
+                  <ol>
+                    <li>Любой сложности</li>
+                    <li>Сайт-визитка</li>
+                    <li>Сайт для организации (корпоративный сайт)</li>
+                    <li>Разработка сайта по индивидуальному дизайну</li>
+                  </ol>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="blockTwo">
+                <p>◼️Перед началом работы:</p>
+                <ol>
+                  <li>Общение с вами, обсуждаем будущий сайт.</li>
+                  <li>Анализ вашей сферы деятельности.</li>
+                </ol>
+                <p>◼️Далее:</p>
+                <ol>
+                  <li>Создание сайты с нуля или по готовому шаблону.</li>
+                  <li>Верстка дизайна</li>
+                  <li>Подключение функционала(если он есть)</li>
+                  <li>Привязка админки к WordPress</li>
+                  <li>Регистрация домена</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
 
       </div>
-
+      
       <div class="aboutContact-mail">
         <div class="fullName">
           <img src="/icon/Group 14.png" alt="">
@@ -126,20 +136,19 @@
       <h2>Мои возможности</h2>
       <div class="myСapabilities-elem">
 
-        <a href="#skills"><div class="myСapabilities-basis">
+        <a href="#skills"><div class="myСapabilities-basis" onclick="displayBasis()">
           <img src="/icon/dev.png" alt="WebDev">
           <h2>Основные знания</h2>
           <p>нажми, чтобы узнать</p>
         </div></a> 
-        <div id="skills"></div>
-        <a href="#skills"><div class="myСapabilities-other">
+        <a href="#skills"><div class="myСapabilities-other" onclick="displayOther()">
           <img src="/icon/other.png" alt="other">
           <h2>Дополнительные знания</h2>
           <p>нажми, чтобы узнать</p>
         </div></a> 
 
       </div>
-      
+      <div id="skills"></div>
       <div class="myСapabilities-skills">
         <div class="myСapabilities-skills_basis">
           <div class="textBasis">
@@ -186,11 +195,11 @@
     <div class="cursor cursor2"></div>
   </main>
   
-  <div class="footer-first">
+  <div class="footer-first" id="contact">
     <hr>
     <h2>Свяжитесь со мной</h2>
   </div>
-  <footer class="footer" id="footer">
+  <footer class="footer">
     
     <div class="container">
       <div class="form-container form__wrapper">
@@ -199,14 +208,12 @@
           <div class="form-row">
             <!-- Имя пользователя -->
             <div class="form-group">
-            <!--  <label for="name" class="control-label">Имя</label>-->
               <input id="name" type="text" name="name" class="form-control" value="" placeholder="Имя" minlength="2"
                 maxlength="30" required="required" autocomplete="off">
               <div class="invalid-feedback"></div>
             </div>
             <!-- Email пользователя -->
             <div class="form-group">
-             <!--  <label for="email" class="control-label">Email-адрес</label>-->
               <input id="email" type="email" name="email" required="required" class="form-control" value=""
                 placeholder="Email-адрес" autocomplete="off">
               <div class="invalid-feedback"></div>
@@ -233,18 +240,15 @@
   
         <!-- Сообщение об успешной отправки формы -->
         <div class="form-success form-success_hide">
-          <div class="form-success__message">Форма успешно отправлена. Нажмите <button type="button"
-              class="form-success__btn">здесь</button>, если нужно отправить ещё одну форму.</div>
+          <div class="form-success__message">Сообщение успешно отправлена. Нажмите <button type="button"
+              class="form-success__btn">здесь</button>, если нужно отправить ещё одно сообщение.</div>
         </div>
   
       </div>
   
     </div>
     
-    <div class="footer-phone">
-      <a href="tel:+79521172318"><img src="/icon/phone.png" alt="phone" width="40px" height="40px"><span>- Телефон</span></a>
-      <a href="https://t.me/Front1Developer" target="_blank"><img src="/icon/telega.png" alt="Telegram" width="40px" height="40px"><span>- Telegram</span></a>
-    </div>
+    
   </footer>
 
   <script src="/feedback/js/form-processing.js"></script>
@@ -272,6 +276,7 @@
 
   </script>
 <script src="/script/slide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/script/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.js" integrity="sha512-bvxXT2u2PNVKMpHmLR54QQ+qAnhn0dM//5spHP+sjRcnlZSmNMaLkvZXAr8peMHyNlUoDEgNnYIlrUTnr5kNYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>

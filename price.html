@@ -9,14 +9,15 @@
 <title>WebDev Maxim</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="robots" content="index, follow" />
-<meta name="keywords" content="конфигуратор ПК, Купить ПК, купить пк онлайн, собрать пк, собрать пк Калининград, ремонт компьютеров, ремонт ПК, сборка компьютеров" />
-<meta name="description" content="Подберем по вашему бюджету ПК. Только у нас самые лучшие цены и за каждую свою работу даем гарантию!!" />
-<link rel="shortcut icon" href="">
+<meta name="keywords" content="Верстальщик, веб разработчик, программист, верстка сайтов, заказать сайт, Разработчик Калининград, Веб разработчик Калининград, Верстальщик Калининград, создать сайт Калининград, Сайт с 0, верстка сайта, создание сайта, программист по созданию сайта" />
+<meta name="description" content="Разработка лучших сайтов по готовому дизайну или с 0!" />
+<link rel="shortcut icon" href="/icon/icon.png">
 <link rel="stylesheet" href="/style/normalize.css">
-<link rel="stylesheet" href="/style/media.css">
 <link rel="stylesheet" href="/style/style.css">
-<link rel="stylesheet" href="/styleForm/form.css">
 <link rel="stylesheet" href="/style/price.css">
+<link rel="stylesheet" href="/feedback/styleForm/form.css">
+<link rel="stylesheet" href="/style/media.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nanum+Myeongjo&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Quicksand&display=swap" rel="stylesheet">
@@ -26,8 +27,8 @@
   <h1>WebDev Max</h1>
   <nav>
     <ul>
-      <li><a href="/index.html">Обо мне</a></li>
-      <li><a href="/price.html" class="active">Услуги</a></li>
+      <li><a href="https://webdevmax.ru/">Обо мне</a></li>
+      <li><a href="https://webdevmax.ru/price/" class="active">Услуги</a></li>
     </ul>
   </nav>
   
@@ -46,93 +47,118 @@
         <div class="main-price_block">
             <div class="main-price_layout">
                 <h2>Верстка сайта</h2>
-                <p>Верстка по шаблону</p>
-                <hr>
-                <p>Установка CMS</p>
-                <hr>
-                <p>Подбор хостинг-провайдера</p>
-                <hr>
-                <p>Консультация</p>
-                <div class="price">
-                    <p>от 3 000р</p>
+                <button id="block-oneOpen">Открыть</button>
+                <button id="block-oneClose" style="display: none;">Закрыть</button>
+                <div class="show-block">
+                  <p>Верстка по шаблону</p>
+                  <hr>
+                  <p>Установка CMS</p>
+                  <hr>
+                  <p>Подбор хостинг-провайдера</p>
+                  <hr>
+                  <p>Консультация</p>
+                  <div class="price">
+                      <p>от 3 000р</p>
+                      <div id="question" class="question-style">?</div>
+                      <div id="question-text" class="question-text">
+                        <p>Точная цена зависит от проекта</p>
+                      </div>
+                  </div>
+                  <div class="href">
+                    <div class="telegram">
+                        <a href="https://t.me/webdevmax" target="_blank">
+                          <img src="/icon/Group 14.png" alt="">
+                          <h3>Telegram</h3>
+                          Front1Developer</a>
+                      </div>
+                      <div class="phone">
+                        <a href="tel:+79521172318">
+                          <img src="/icon/Group 14.png" alt="">
+                          <h3>Phone</h3>
+                          +7(952)117-23-18</a>
+                      </div>
                 </div>
-                <div class="href">
-                  <div class="telegram">
-                      <a href="https://t.me/Front1Developer" target="_blank">
-                        <img src="/icon/Group 14.png" alt="">
-                        <h3>Telegram</h3>
-                        Front1Developer</a>
-                    </div>
-                    <div class="phone">
-                      <a href="tel:+79521172318">
-                        <img src="/icon/Group 14.png" alt="">
-                        <h3>Phone</h3>
-                        +7(952)117-23-18</a>
-                    </div>
               </div>
             </div>
 
             <div class="main-price_layout">
-                <h2>Разработка сайта</h2>
-                <p>Верстка по шаблону</p>
-                <hr>
-                <p>Подключение функционала
-                  <br>Любой сложности
-                </p>
-                <hr>
-                <p>Установка CMS</p>
-                <hr>
-                <p>Подбор хостинг-провайдера</p>
-                <hr>
-                <p>Консультация</p>
-                <div class="price">
-                    <p>от 5 000р</p>
+              <h2>Разработка сайта</h2>
+              <button id="block-oneOpen">Открыть</button>
+              <button id="block-oneClose" style="display: none;">Закрыть</button>
+                <div class="show-block">
+                  <p>Верстка по шаблону</p>
+                  <hr>
+                  <p>Подключение функционала
+                    <br>Любой сложности
+                  </p>
+                  <hr>
+                  <p>Установка CMS</p>
+                  <hr>
+                  <p>Подбор хостинг-провайдера</p>
+                  <hr>
+                  <p>Консультация</p>
+                  <div class="price">
+                      <p>от 5 000р</p>
+                      <div id="question" class="question-style">?</div>
+                      <div id="question-text" class="question-text">
+                        <p>Точная цена зависит от проекта</p>
+                      </div>
+                  </div>
+                  <div class="href">
+                    <div class="telegram">
+                        <a href="https://t.me/webdevmax" target="_blank">
+                          <img src="/icon/Group 14.png" alt="">
+                          <h3>Telegram</h3>
+                          Front1Developer</a>
+                      </div>
+                      <div class="phone">
+                        <a href="tel:+79521172318">
+                          <img src="/icon/Group 14.png" alt="">
+                          <h3>Phone</h3>
+                          +7(952)117-23-18</a>
+                      </div>
                 </div>
-                <div class="href">
-                  <div class="telegram">
-                      <a href="https://t.me/Front1Developer" target="_blank">
-                        <img src="/icon/Group 14.png" alt="">
-                        <h3>Telegram</h3>
-                        Front1Developer</a>
-                    </div>
-                    <div class="phone">
-                      <a href="tel:+79521172318">
-                        <img src="/icon/Group 14.png" alt="">
-                        <h3>Phone</h3>
-                        +7(952)117-23-18</a>
-                    </div>
               </div>
             </div>
 
             <div class="main-price_layout">
-                <h2>Доработка сайта</h2>
-                <p>Изучение кода</p>
-                <hr>
-                <p>Оптимизация старого кода</p>
-                <hr>
-                <p>Улучшение быстродействия</p>
-                <hr>
-                <p>Дополнительные доработки</p>
-                <hr>
-                <p>Консультация</p>
-                <div class="price">
-                    <p>от 1 500р</p>
+              <h2>Доработка сайта</h2>
+              <button id="block-oneOpen">Открыть</button>
+              <button id="block-oneClose" style="display: none;">Закрыть</button>
+                <div class="show-block">
+                  <p>Изучение кода</p>
+                  <hr>
+                  <p>Оптимизация старого кода</p>
+                  <hr>
+                  <p>Улучшение быстродействия</p>
+                  <hr>
+                  <p>Дополнительные доработки</p>
+                  <hr>
+                  <p>Консультация</p>
+                  <div class="price">
+                      <p>от 1 500р</p>
+                      <div id="question" class="question-style">?</div>
+                      <div id="question-text" class="question-text">
+                        <p>Точная цена зависит от проекта</p>
+                      </div>
+                  </div>
+                  <div class="href">
+                    <div class="telegram">
+                        <a href="https://t.me/webdevmax" target="_blank">
+                          <img src="/icon/Group 14.png" alt="">
+                          <h3>Telegram</h3>
+                          Front1Developer</a>
+                      </div>
+                      <div class="phone">
+                        <a href="tel:+79521172318">
+                          <img src="/icon/Group 14.png" alt="">
+                          <h3>Phone</h3>
+                          +7(952)117-23-18</a>
+                      </div>
                 </div>
-                <div class="href">
-                  <div class="telegram">
-                      <a href="https://t.me/Front1Developer" target="_blank">
-                        <img src="/icon/Group 14.png" alt="">
-                        <h3>Telegram</h3>
-                        Front1Developer</a>
-                    </div>
-                    <div class="phone">
-                      <a href="tel:+79521172318">
-                        <img src="/icon/Group 14.png" alt="">
-                        <h3>Phone</h3>
-                        +7(952)117-23-18</a>
-                    </div>
               </div>
             </div>
+
         </div>  
       </div>
       
@@ -228,30 +254,17 @@
       
   </main>
 
-  <footer class="footer">
-    <h2>Минута Вашего внимания</h2>
-      <div class="footer_block">
-        <div class="footer_block-text">
-          <ol>
-            <li>Цены указаны "<b style="color: white;">от</b>", так как точная цена зависит от сложности проекта.</li>
-            <li>Любой проект полностью обговаривается (от внешнего вида, до цены).</li>
-            <li>Даю гарантию и качество</li>
-            <li>Проекты представлены не все.</li>
-          </ol>
-        </div>
-        <div class="footer_block-connect">
-          <p>Для получения больше информации, свяжитесь со мной любым удобным для Вас способом.</p>
-          <a href="https://t.me/Front1Developer" target="_blank"><img src="/icon/telega.png" alt="" width="40px" height="40px"></a> 
-          <a href="tel:+79521172318">
-            <img src="/icon/phone.png" alt="" width="40px" height="40px">
-        </div>
-      </div>
+  <footer class="footer-price">
+    <p>Проекты представлены не все.</p>
+    <p>Точная цена зависит от сложности проекта</p>
   </footer>
 
 
-<script src="/script/slide.js"></script>
-
-<script src="/script/script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.js" integrity="sha512-bvxXT2u2PNVKMpHmLR54QQ+qAnhn0dM//5spHP+sjRcnlZSmNMaLkvZXAr8peMHyNlUoDEgNnYIlrUTnr5kNYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
-</html>
+  <script src="/script/slide.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="/script/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.js" integrity="sha512-bvxXT2u2PNVKMpHmLR54QQ+qAnhn0dM//5spHP+sjRcnlZSmNMaLkvZXAr8peMHyNlUoDEgNnYIlrUTnr5kNYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+  </html>
+  
+  

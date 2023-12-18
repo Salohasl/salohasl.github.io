@@ -14,31 +14,47 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
     .main-price_layout{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
         text-align: center;
-        border-left: 1px solid #4F4F4F;
-        border-right: 1px solid #4F4F4F;
         border-radius: 10px;
         color: #27AE60;
-        height: 650px;
-        cursor: pointer;
         margin: 20px;
+        .show-block{
+           display: none;
+           &.active{
+            display: block;
+            animation: 1s showAnim ease-in;
+           }
+        }
         h2{
-            margin: 0px;
-            padding: 10px;
+          margin-bottom: 20px;
+          margin-top: -15px;
+          font-weight: 700;
+          color: #4F4F4F;
+        }
+        button{
             height: 50px;
-            width: 100%;
+            width: 320px;
+            border: none;
             background-color: #27AE60;
             border-radius: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            
+            &:hover{
+              box-shadow: inset 2px 2px 5px black;
+              background-color: #4F4F4F;
+            }
         }
         hr{
-            width: 90%;
+            width: 100%;
             margin-bottom: 20px;
             margin-top: 5px;
             border-color: #4F4F4F;
@@ -53,11 +69,62 @@
             text-align: center;
             font-size: 30px;
             width: 100%;
-            margin-top: 20px;
+            height: 60px;
+            padding-top: 3px;
             border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .question-style{
+              border: 1px solid #4F4F4F;
+              background-color: #4F4F4F;
+              padding-top: 2px;
+              font-size: 20px;
+              border-radius: 15px;
+              width: 30px;
+              height: 30px;
+              cursor: pointer;
+              &:hover{
+                color: #4F4F4F;
+                background-color: #fff;
+              }
+              &:hover + .question-text{
+                display: block;
+              }
+              &:focus + .question-text{
+                display: block;
+              }
+            }
+            .question-text{
+              color: #4F4F4F;
+              position: absolute;
+              background-color: rgba(255,255,230,0.9);
+              transform: translateX(150px);
+              border-radius: 15px;
+              transition: 1s;
+              display: none;
+              p{
+                font-size: 15px;
+                text-align: center;
+                width: 100px;
+                font-weight: 600;
+              }
+            }
         }
     }
 }
+@keyframes showAnim {
+  0%{
+    opacity: 0;
+    transform: translate3d(0%, -100px, 0px);
+  }
+  100%{
+    opacity: 1;
+   
+  }
+}
+
 
 .main-price_href{
     display: flex;
@@ -72,6 +139,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    cursor: pointer;
     .phone{
         
         margin: 20px;
@@ -96,7 +164,7 @@
 .price-portfolio{
     h2{
         color: #4F4F4F;
-        margin-top: 150px;
+        margin-top: 200px;
         margin-left: 2%;
         font-size: 40px;
     }
@@ -292,42 +360,17 @@
     transition-duration: .7s;
   }
 
-.footer{
+.footer-price{
     margin-bottom: 5px;
     margin-top: 50px;
-    h2{
-        color: white;
-        font-size: 35px;
-        text-align: center;
-        font-weight: 400;
-    }
-}
-.footer_block{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-    .footer_block-text{
-        color: #27AE60;
-        font-size: 15px;
-        line-height: 25px;
-        margin: 0px;
-        font-weight: 500;
-        li::marker{
-            color: white;
-        }
-        
-    }
-    .footer_block-connect{
-        color: #27AE60;
-        margin: 20px;
-        font-weight: 500;
-        img{
-            margin: 10px;
-        }
+    flex-direction: column;
+    p{
+      text-align: center;
+      color: #4F4F4F;
+      font-weight: 600;
     }
 }
+
 
 

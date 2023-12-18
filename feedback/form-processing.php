@@ -38,16 +38,16 @@ const HAS_SEND_EMAIL = true;
 // добавить ли прикреплённые файлы в тело письма в виде ссылок
 const HAS_ATTACH_IN_BODY = true;
 const EMAIL_SETTINGS = [
-  'addresses' => ['manager@domain.com'], // кому необходимо отправить письмо
-  'from' => ['no-reply@domain.com', 'Имя сайта'], // от какого email и имени необходимо отправить письмо
+  'addresses' => ['maximzavidy@yandex.ru'], // кому необходимо отправить письмо
+  'from' => ['maximzavidy@yandex.ru', 'webdevmax.ru'], // от какого email и имени необходимо отправить письмо
   'subject' => 'Сообщение с формы обратной связи', // тема письма
   'host' => 'ssl://smtp.yandex.ru', // SMTP-хост
-  'username' => 'name@yandex.ru', // // SMTP-пользователь
-  'password' => '*********', // SMTP-пароль
+  'username' => '**********', // // SMTP-пользователь
+  'password' => '**************', // SMTP-пароль
   'port' => '465' // SMTP-порт
 ];
 const HAS_SEND_NOTIFICATION = false;
-const BASE_URL = 'https://domain.com';
+const BASE_URL = 'https://webdevmax.ru/';
 const SUBJECT_FOR_CLIENT = 'Ваше сообщение доставлено';
 //
 const HAS_WRITE_TXT = true;
@@ -105,69 +105,6 @@ if (!empty($_POST['message'])) {
   $data['result'] = 'error';
   $data['errors']['message'] = 'Заполните это поле.';
   itc_log('Не заполнено поле message.');
-}
-
-// проверка капчи
-if (HAS_CHECK_CAPTCHA) {
-  session_start();
-  if ($_POST['captcha'] === $_SESSION['captcha']) {
-    $data['form']['captcha'] = $_POST['captcha'];
-  } else {
-    $data['result'] = 'error';
-    $data['errors']['captcha'] = 'Код не соответствует изображению.';
-    itc_log('Не пройдена капча. Указанный код ' . $_POST['captcha'] . ' не соответствует ' . $_SESSION['captcha']);
-  }
-}
-
-// валидация agree
-if ($_POST['agree'] == 'true') {
-  $data['form']['agree'] = true;
-} else {
-  $data['result'] = 'error';
-  $data['errors']['agree'] = 'Необходимо установить этот флажок.';
-  itc_log('Не установлен флажок для поля agree.');
-}
-
-// валидация прикреплённых файлов
-if (empty($_FILES['attach'])) {
-  if (HAS_ATTACH_REQUIRED) {
-    $data['result'] = 'error';
-    $data['errors']['attach'] = 'Заполните это поле.';
-    itc_log('Не прикреплены файлы к форме.');
-  }
-} else {
-  foreach ($_FILES['attach']['error'] as $key => $error) {
-    if ($error == UPLOAD_ERR_OK) {
-      $name = basename($_FILES['attach']['name'][$key]);
-      $size = $_FILES['attach']['size'][$key];
-      $mtype = mime_content_type($_FILES['attach']['tmp_name'][$key]);
-      if (!in_array($mtype, ALLOWED_MIME_TYPES)) {
-        $data['result'] = 'error';
-        $data['errors']['attach'][$key] = 'Файл имеет не разрешённый тип.';
-        itc_log('Прикреплённый файл ' . $name . ' имеет не разрешённый тип.');
-      } else if ($size > MAX_FILE_SIZE) {
-        $data['result'] = 'error';
-        $data['errors']['attach'][$key] = 'Размер файла превышает допустимый.';
-        itc_log('Размер файла ' . $name . ' превышает допустимый.');
-      }
-    }
-  }
-  if ($data['result'] === 'success') {
-    // перемещаем файлы в папку UPLOAD_PATH
-    foreach ($_FILES['attach']['name'] as $key => $attach) {
-      $ext = mb_strtolower(pathinfo($_FILES['attach']['name'][$key], PATHINFO_EXTENSION));
-      $name = basename($_FILES['attach']['name'][$key], $ext);
-      $tmp = $_FILES['attach']['tmp_name'][$key];
-      $newName = rtrim($name, '.') . '_' . uniqid() . '.' . $ext;
-      if (!move_uploaded_file($tmp, UPLOAD_PATH . $newName)) {
-        $data['result'] = 'error';
-        $data['errors']['attach'][$key] = 'Ошибка при загрузке файла.';
-        itc_log('Ошибка при перемещении файла ' . $name . '.');
-      } else {
-        $attachs[] = UPLOAD_PATH . $newName;
-      }
-    }
-  }
 }
 
 use PHPMailer\PHPMailer\PHPMailer;
