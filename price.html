@@ -20,15 +20,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nanum+Myeongjo&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Quicksand&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nanum+Myeongjo&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <header>
   <h1>WebDev Max</h1>
   <nav>
     <ul>
-      <li><a href="https://webdevmax.ru/">Обо мне</a></li>
-      <li><a href="https://webdevmax.ru/price/" class="active">Услуги</a></li>
+      <li><a href="/index.html">Обо мне</a></li>
+      <li><a href="#" class="active">Услуги</a></li>
     </ul>
   </nav>
   
@@ -47,9 +46,9 @@
         <div class="main-price_block">
             <div class="main-price_layout">
                 <h2>Верстка сайта</h2>
-                <button id="block-oneOpen">Открыть</button>
+                <button id="block-oneOpen">Посмотреть</button>
                 <button id="block-oneClose" style="display: none;">Закрыть</button>
-                <div class="show-block">
+                <div class="show-block show-block_left">
                   <p>Верстка по шаблону</p>
                   <hr>
                   <p>Установка CMS</p>
@@ -83,9 +82,9 @@
 
             <div class="main-price_layout">
               <h2>Разработка сайта</h2>
-              <button id="block-oneOpen">Открыть</button>
+              <button id="block-twoOpen">Посмотреть</button>
               <button id="block-oneClose" style="display: none;">Закрыть</button>
-                <div class="show-block">
+                <div class="show-block show-block_center">
                   <p>Верстка по шаблону</p>
                   <hr>
                   <p>Подключение функционала
@@ -123,9 +122,9 @@
 
             <div class="main-price_layout">
               <h2>Доработка сайта</h2>
-              <button id="block-oneOpen">Открыть</button>
+              <button id="block-threeOpen">Посмотреть</button>
               <button id="block-oneClose" style="display: none;">Закрыть</button>
-                <div class="show-block">
+                <div class="show-block_right">
                   <p>Изучение кода</p>
                   <hr>
                   <p>Оптимизация старого кода</p>
@@ -256,13 +255,12 @@
 
   <footer class="footer-price">
     <p>Проекты представлены не все.</p>
-    <p>Точная цена зависит от сложности проекта</p>
+    <p>Точная цена зависит от сложности проекта.</p>
   </footer>
 
-
-  <script src="/script/slide.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="/script/script.js"></script>
+  <script defer src="/script/scriptPrice.js"></script>
+  <script defer src="/script/add.js"></script>
+  <script src="/script/up.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.js" integrity="sha512-bvxXT2u2PNVKMpHmLR54QQ+qAnhn0dM//5spHP+sjRcnlZSmNMaLkvZXAr8peMHyNlUoDEgNnYIlrUTnr5kNYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </body>
   </html>

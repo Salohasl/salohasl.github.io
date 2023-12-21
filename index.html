@@ -13,30 +13,29 @@
 <meta name="description" content="Разработка лучших сайтов по готовому дизайну или с 0!" />
 <link rel="shortcut icon" href="/icon/icon.png">
 <link rel="stylesheet" href="/style/normalize.css">
-<link rel="stylesheet" href="/style/media.css">
 <link rel="stylesheet" href="/style/style.css">
 <link rel="stylesheet" href="/style/price.css">
+<link rel="stylesheet" href="/style/media.css">
 <link rel="stylesheet" href="/feedback/styleForm/form.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nanum+Myeongjo&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Quicksand&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nanum+Myeongjo&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <header>
-  <h1>WebDev Max</h1>
-  <nav>
-    <ul>
-      <li><a href="/index.html" class="active">Обо мне</a></li>
-      <li><a href="/price.html">Услуги</a></li>
-    </ul>
-  </nav>
-  
-  <div class="menuBtn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <h1>WebDev Max</h1>
+    <nav>
+      <ul>
+        <li><a href="/index.html" class="active">Обо мне</a></li>
+        <li><a href="/price.html">Услуги</a></li>
+      </ul>
+    </nav>
+    
+    <div class="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 </header>
 
 <body>
@@ -51,7 +50,7 @@
         <p>I'm a Frontend Developer</p>
         <div class="aboutMe-text_button">
           <button class="glow-on-hover"><a href="/pdf/Завидий Максим.pdf" target="_blank" download>Посмотреть резюме</a></button>
-          <a href="#contact"><button class="glow-on-hover">Напишите мне</button></a>
+          <a href="#contact"><button class="glow-on-hover ">Напишите мне</button></a>
         </div>
       </div>
       <div class="aboutMe-img">
@@ -65,7 +64,7 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="blockOne">
+                <div class="blockTwo animBlock">
                   <h3>Доброго времени суток, я Веб-разработчик.</h3>
                   <p>Занимаюсь разработкой сайтов.</p>
                   <ol>
@@ -82,7 +81,7 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="blockTwo">
+                <div class="blockTwo animBlock">
                 <p>◼️Перед началом работы:</p>
                 <ol>
                   <li>Общение с вами, обсуждаем будущий сайт.</li>
@@ -93,7 +92,7 @@
                   <li>Создание сайты с нуля или по готовому шаблону.</li>
                   <li>Верстка дизайна</li>
                   <li>Подключение функционала(если он есть)</li>
-                  <li>Привязка админки к WordPress</li>
+                  <li>Привязка админки к CMS</li>
                   <li>Регистрация домена</li>
                 </ol>
               </div>
@@ -132,25 +131,26 @@
       </div>
     </div>
     
-    <div class="myСapabilities">
+    <div class="myСapabilities" id="myСapabilities-click" style="display: none;">
       <h2>Мои возможности</h2>
       <div class="myСapabilities-elem">
 
-        <a href="#skills"><div class="myСapabilities-basis" onclick="displayBasis()">
+        <div class="myСapabilities-basis">
           <img src="/icon/dev.png" alt="WebDev">
           <h2>Основные знания</h2>
-          <p>нажми, чтобы узнать</p>
-        </div></a> 
-        <a href="#skills"><div class="myСapabilities-other" onclick="displayOther()">
+          <a href="#basis"><button id="basisBtn">Узнать</button></a>
+        </div>
+        <div class="myСapabilities-other">
           <img src="/icon/other.png" alt="other">
           <h2>Дополнительные знания</h2>
-          <p>нажми, чтобы узнать</p>
-        </div></a> 
+          <a href="#other"><button id="otherBtn">Узнать</button></a>
+        </div>
 
       </div>
-      <div id="skills"></div>
-      <div class="myСapabilities-skills">
+      <div id="basis"></div>
+      <div class="myСapabilities-skills" id="myСapabilities-skills">
         <div class="myСapabilities-skills_basis">
+          <h3>Основные:</h3>
           <div class="textBasis">
             <h1>100%</h1>
             <p>HTML</p>
@@ -169,9 +169,10 @@
           </div>
         </div>
       </div>
-
-      <div class="myСapabilities-otherSkills">
+      <div id="other"></div>
+      <div class="myСapabilities-otherSkills" id="myСapabilities-otherSkills">
         <div class="myСapabilities-skills_other">
+          <h3>Дополнительные:</h3>
           <div class="textOther">
             <h1>100%</h1>
             <p>Pug</p>
@@ -275,9 +276,11 @@
     });
 
   </script>
-<script src="/script/slide.js"></script>
+
+<script defer src="/script/add.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="/script/script.js"></script>
+<script defer src="/script/script.js"></script>
+<script defer src="/script/up.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.js" integrity="sha512-bvxXT2u2PNVKMpHmLR54QQ+qAnhn0dM//5spHP+sjRcnlZSmNMaLkvZXAr8peMHyNlUoDEgNnYIlrUTnr5kNYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
   font-family: "Lora", serif;
   font-family: "Nanum Myeongjo", serif;
   font-family: "Open Sans", sans-serif;
+  font-family: "Playfair Display", serif;
   font-family: "Quicksand", sans-serif;
   margin: 0;
 }
@@ -85,8 +86,8 @@ header {
   justify-content: space-around;
   align-items: center;
   position: fixed;
-  width: 100%;
   z-index: 4;
+  width: 100%;
 }
 header h1 {
   color: white;
@@ -114,7 +115,6 @@ header ul a.active {
 }
 
 .aboutMe {
-  
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
@@ -158,6 +158,23 @@ header ul a.active {
   border-radius: 250px;
 }
 
+@-webkit-keyframes animSwipe {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes animSwipe {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
 .aboutContact h1 {
   color: #fff;
   text-align: center;
@@ -176,9 +193,13 @@ header ul a.active {
 }
 .aboutContact .aboutContact-text .swiper .swiper-button-next {
   color: #27AE60;
+  -webkit-animation: animSwipe 1s linear infinite alternate;
+          animation: animSwipe 1s linear infinite alternate;
 }
 .aboutContact .aboutContact-text .swiper .swiper-button-prev {
   color: #27AE60;
+  -webkit-animation: animSwipe 1s linear infinite alternate;
+          animation: animSwipe 1s linear infinite alternate;
 }
 .aboutContact .aboutContact-text .swiper-slide {
   background-color: #171717;
@@ -188,35 +209,57 @@ header ul a.active {
   cursor: -webkit-grab;
   cursor: grab;
 }
-.aboutContact .aboutContact-text .blockOne {
-  border: 1px solid #202020;
+.aboutContact .aboutContact-text .animBlock {
+  position: relative;
+  z-index: 0;
   border-radius: 10px;
-  margin: 15px;
-  background-color: #202020;
-  box-shadow: 1px 1px 5px 5px #27AE60;
+  overflow: hidden;
 }
-.aboutContact .aboutContact-text .blockOne h3 {
+.aboutContact .aboutContact-text .animBlock::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #27AE60;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#27AE60, #27AE60), linear-gradient(#171717, #171717), linear-gradient(#27AE60, #27AE60), linear-gradient(#171717, #171717);
+  -webkit-animation: anim-ramka-5 4s linear infinite;
+          animation: anim-ramka-5 4s linear infinite;
+}
+.aboutContact .aboutContact-text .animBlock::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: #171717;
+  border-radius: 5px;
+  filter: blur(5px);
+}
+@-webkit-keyframes anim-ramka-5 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes anim-ramka-5 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.aboutContact .aboutContact-text .blockTwo {
+  padding: 25px;
+}
+.aboutContact .aboutContact-text .blockTwo h3 {
   color: #27AE60;
   margin: 10px;
   text-align: center;
-}
-.aboutContact .aboutContact-text .blockOne p {
-  color: white;
-  margin: 10px;
-}
-.aboutContact .aboutContact-text .blockOne li {
-  color: #27AE60;
-  margin: 10px;
-}
-.aboutContact .aboutContact-text .blockOne li::marker {
-  color: white;
-}
-.aboutContact .aboutContact-text .blockTwo {
-  border: 1px solid #202020;
-  box-shadow: 1px 1px 5px 5px #27AE60;
-  border-radius: 10px;
-  margin: 15px;
-  background-color: #202020;
 }
 .aboutContact .aboutContact-text .blockTwo p {
   color: white;
@@ -250,8 +293,27 @@ header ul a.active {
   color: white;
 }
 
+@-webkit-keyframes wipe-enter {
+  0% { /* Старт анимации */
+    opacity: 0;
+  }
+  100% { /* в финале анимации - финал это заданная 0.55s */
+    opacity: 1;
+  }
+}
+
+@keyframes wipe-enter {
+  0% { /* Старт анимации */
+    opacity: 0;
+  }
+  100% { /* в финале анимации - финал это заданная 0.55s */
+    opacity: 1;
+  }
+}
 .myСapabilities {
   margin-top: 200px;
+  -webkit-animation: wipe-enter 1s ease-in;
+          animation: wipe-enter 1s ease-in;
 }
 .myСapabilities .myСapabilities-elem {
   display: flex;
@@ -264,12 +326,12 @@ header ul a.active {
   color: white;
   text-align: center;
   font-size: 30px;
+  margin: 50px;
 }
 .myСapabilities .myСapabilities-basis {
   margin: 10px;
   background-color: hsl(0deg, 0%, 13%);
   border-radius: 20px;
-  cursor: pointer;
 }
 .myСapabilities .myСapabilities-basis.active {
   box-shadow: inset 1px 1px 5px black;
@@ -284,15 +346,27 @@ header ul a.active {
   margin: 30px;
   text-align: center;
 }
-.myСapabilities .myСapabilities-basis p {
-  color: #27AE60;
+.myСapabilities .myСapabilities-basis button {
   text-align: center;
+  width: 100%;
+  height: 80px;
+  background-color: #27AE60;
+  border: none;
+  color: white;
+  font-size: 25px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 1s;
+}
+.myСapabilities .myСapabilities-basis button:hover {
+  background-color: #4F4F4F;
+  box-shadow: inset 1px 1px 5px black;
+  cursor: pointer;
 }
 .myСapabilities .myСapabilities-other {
   background-color: #202020;
   border-radius: 20px;
   margin: 10px;
-  cursor: pointer;
 }
 .myСapabilities .myСapabilities-other.active {
   box-shadow: inset 1px 1px 5px black;
@@ -307,21 +381,30 @@ header ul a.active {
   margin: 30px;
   text-align: center;
 }
-.myСapabilities .myСapabilities-other p {
-  color: #27AE60;
+.myСapabilities .myСapabilities-other button {
   text-align: center;
+  width: 100%;
+  height: 80px;
+  background-color: #27AE60;
+  border: none;
+  color: white;
+  font-size: 25px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 1s;
+}
+.myСapabilities .myСapabilities-other button:hover {
+  background-color: #4F4F4F;
+  box-shadow: inset 1px 1px 5px black;
+  cursor: pointer;
 }
 .myСapabilities a {
   text-decoration: none;
 }
 .myСapabilities .myСapabilities-skills {
-  display: none;
-}
-.myСapabilities .myСapabilities-skills.skillsActive {
-  display: block;
   -webkit-animation: other 0.5s ease-in;
           animation: other 0.5s ease-in;
-  margin-top: 60px;
+  display: none;
 }
 .myСapabilities .myСapabilities-skills_basis {
   background-color: #202020;
@@ -331,10 +414,17 @@ header ul a.active {
   align-items: center;
   justify-content: center;
   margin: 50px;
+  border-radius: 10px;
 }
 .myСapabilities .myСapabilities-skills_basis h1 {
   color: #4F4F4F;
   font-size: 40px;
+}
+.myСapabilities .myСapabilities-skills_basis h3 {
+  color: #27AE60;
+  font-size: 25px;
+  font-weight: 200;
+  margin: 15px;
 }
 .myСapabilities .myСapabilities-skills_basis p {
   color: #27AE60;
@@ -346,12 +436,8 @@ header ul a.active {
 }
 .myСapabilities .myСapabilities-otherSkills {
   display: none;
-}
-.myСapabilities .myСapabilities-otherSkills.otherActive {
-  display: block;
   -webkit-animation: other 0.5s ease-in;
           animation: other 0.5s ease-in;
-  margin-top: 60px;
 }
 .myСapabilities .myСapabilities-skills_other {
   background-color: #202020;
@@ -361,10 +447,17 @@ header ul a.active {
   align-items: center;
   justify-content: center;
   margin: 50px;
+  border-radius: 10px;
 }
 .myСapabilities h1 {
   color: #4F4F4F;
   font-size: 40px;
+}
+.myСapabilities h3 {
+  margin: 15px;
+  color: #27AE60;
+  font-size: 25px;
+  font-weight: 200;
 }
 .myСapabilities p {
   color: #27AE60;
@@ -464,10 +557,6 @@ footer .footer-phone a span {
 
 .glow-on-hover:active {
   color: #000;
-}
-
-.glow-on-hover:active:after {
-  background: transparent;
 }
 
 .glow-on-hover:hover:before {

@@ -3,6 +3,7 @@
     font-family: 'Lora', serif;
     font-family: 'Nanum Myeongjo', serif;
     font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-family: 'Quicksand', sans-serif;
     margin: 0;
 }
@@ -72,8 +73,8 @@ header{
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    width: 100%;
     z-index: 4;
+    width: 100%;
     h1{
         color: #FFFF;
         margin: 16px;
@@ -100,13 +101,13 @@ header{
     }
 }
 
+
 .aboutMe{
-    background-image: url(/img/fon.png);
     background-size: cover;
     background-repeat: no-repeat;
     -webkit-box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
--moz-box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
-box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
+    -moz-box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
+    box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
     padding: 80px;
     display: flex;
     flex-direction: row;
@@ -147,6 +148,14 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
         }
     }
 }
+@keyframes animSwipe {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.3);
+    }
+}
 .aboutContact{
     h1{
         color: #fff;
@@ -164,9 +173,11 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
             width: 45%;
             .swiper-button-next{
                 color: #27AE60;
+                animation: animSwipe 1s linear infinite alternate;
             }
             .swiper-button-prev{
                 color: #27AE60;
+                animation: animSwipe 1s linear infinite alternate;
             }
           }
       
@@ -178,38 +189,52 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
             cursor: grab;
           }
           
-        .blockOne{
-            border: 1px solid #202020;
+        .animBlock {
+            position: relative;
+            z-index: 0;
             border-radius: 10px;
-            margin: 15px;
+            overflow: hidden;
+        }
+        .animBlock::before {
+            content: '';
+            position: absolute;
+            z-index: -2;
+            left: -50%;
+            top: -50%;
+            width: 200%;
+            height: 200%;
+            background-color: #27AE60;
+            background-repeat: no-repeat;
+            background-size: 50% 50%, 50% 50%;
+            background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+            background-image: linear-gradient(#27AE60, #27AE60), linear-gradient(#171717, #171717), linear-gradient(#27AE60, #27AE60), linear-gradient(#171717, #171717);
+            animation: anim-ramka-5 4s linear infinite;  
             
-            background-color: #202020;
-            box-shadow: 1px 1px 5px 5px #27AE60;
+        }
+        .animBlock::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 6px;
+            top: 6px;
+            width: calc(100% - 12px);
+            height: calc(100% - 12px);
+            background: #171717;
+            border-radius: 5px;
+            filter: blur(5px);
+        }
+        @keyframes anim-ramka-5 {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+        .blockTwo{
+            padding: 25px;
             h3{
                 color: #27AE60;
                 margin: 10px;
                 text-align: center;
             }
-            p{
-                color: white;
-                margin: 10px;
-                
-            }
-            li{
-                color: #27AE60;
-                margin: 10px;
-                &::marker{
-                    color: white;
-                }
-            }
-        }
-        .blockTwo{
-            border: 1px solid #202020;
-            box-shadow: 1px 1px 5px 5px #27AE60;
-            border-radius: 10px;
-            margin: 15px;
-
-            background-color: #202020;
             p{
                 color: white;
                 margin: 10px;
@@ -246,9 +271,19 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
         }
     }
 }
-
+@keyframes wipe-enter {
+    0% {                /* Старт анимации */
+        opacity: 0;
+        
+    }
+    100% {              /* в финале анимации - финал это заданная 0.55s */
+        opacity: 1;
+       
+    }
+  }
 .myСapabilities{
     margin-top: 200px;
+    animation:  wipe-enter 1s ease-in;
     .myСapabilities-elem{
         display: flex;
         flex-direction: row;
@@ -260,13 +295,12 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
         color: white;
         text-align: center;
         font-size: 30px;
+        margin: 50px;
     }
     .myСapabilities-basis{
         margin: 10px;
         background-color: hsl(0, 0%, 13%);
         border-radius: 20px;
-        cursor: pointer;
-        
         &.active{
             box-shadow: inset 1px 1px 5px black;
             border-bottom:2px solid #27AE60;
@@ -280,16 +314,28 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
             margin: 30px;
             text-align: center;
         }
-        p{
-            color: #27AE60;
+        button{
             text-align: center;
+            width: 100%;
+            height: 80px;
+            background-color: #27AE60;
+            border: none;
+            color: white;
+            font-size: 25px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            transition: 1s;
+            &:hover{
+                background-color: #4F4F4F;
+                box-shadow: inset 1px 1px 5px black;
+                cursor: pointer;
+            }
         }
     }
     .myСapabilities-other{
         background-color: #202020;
         border-radius: 20px;
         margin: 10px;
-        cursor: pointer;
         &.active{
             box-shadow: inset 1px 1px 5px black;
             border-bottom:2px solid #27AE60;
@@ -303,20 +349,28 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
             margin: 30px;
             text-align: center;
         }
-        p{
-            color: #27AE60;
+        button{
             text-align: center;
+            width: 100%;
+            height: 80px;
+            background-color: #27AE60;
+            border: none;
+            color: white;
+            font-size: 25px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            transition: 1s;
+            &:hover{
+                background-color: #4F4F4F;
+                box-shadow: inset 1px 1px 5px black;
+                cursor: pointer;
+            }
         }
     }
     a{text-decoration: none;}
     .myСapabilities-skills{
+        animation: other .5s ease-in;
         display: none;
-        &.skillsActive{
-            display: block;
-            animation: other .5s ease-in;
-            margin-top: 60px;
-        }
-        
     }
     .myСapabilities-skills_basis{
         background-color: #202020;
@@ -326,9 +380,16 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
         align-items: center;
         justify-content: center;
         margin: 50px;
+        border-radius: 10px;
         h1{
             color: #4F4F4F;
             font-size: 40px;
+        }
+        h3{
+            color: #27AE60;
+            font-size: 25px;
+            font-weight: 200;
+            margin: 15px;
         }
         p{
             color: #27AE60;
@@ -342,11 +403,7 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
 
     .myСapabilities-otherSkills{
         display: none;
-        &.otherActive{
-            display: block;
-            animation: other .5s ease-in;
-            margin-top: 60px;
-        }
+        animation: other .5s ease-in;
     }
     .myСapabilities-skills_other{
         background-color: #202020;
@@ -356,10 +413,17 @@ box-shadow: 0px 36px 34px 8px rgba(0, 0, 0, 0.79);
         align-items: center;
         justify-content: center;
         margin: 50px;
+        border-radius: 10px;
     }
     h1{
         color: #4F4F4F;
         font-size: 40px;
+    }
+    h3{
+        margin: 15px;
+        color: #27AE60;
+        font-size: 25px;
+        font-weight: 200;
     }
     p{
         color: #27AE60;
@@ -397,7 +461,6 @@ footer{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    
     .footer-phone{
         margin-left: 100px;
         display: flex;
@@ -451,10 +514,6 @@ footer{
 .glow-on-hover:active {
     color: #000
     
-}
-
-.glow-on-hover:active:after {
-    background: transparent;
 }
 
 .glow-on-hover:hover:before {
